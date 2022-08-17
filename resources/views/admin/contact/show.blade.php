@@ -8,7 +8,7 @@
                         <h3>Message List</h3>
                     </div>
                     <div class="card-body">
-                         <table class="table table-bordered bg-light">
+                         <table class="table table-bordered bg-success">
                               <thead>
                                     <tr>
                                         <th width="18%">Name</th>

@@ -64,7 +64,9 @@ class userController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->description = $request->description;   
-            $user->password = bcrypt($request->password);     
+              if($request->password ==!null){
+            $user->password = bcrypt($request->password);
+          }   
          if($request->file('image')){
             if(File::exists($user->image)){
                 File::delete($user->image);    
