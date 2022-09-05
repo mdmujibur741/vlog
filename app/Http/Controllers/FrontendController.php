@@ -104,7 +104,7 @@ class FrontendController extends Controller
           $tag = tag::where('slug', $slug)->first();
           if($tag){
                   $post = $tag->posts()->orderBy('created_at', 'desc')->paginate(9);
-                 // return $post;
+                  return $post;
                   return view('website.tag', compact('tag', 'post'));
           }else{
                 return redirect('/');

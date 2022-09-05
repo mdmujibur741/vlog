@@ -26,7 +26,6 @@ class PostFactory extends Factory
                'description'  => $this->faker->text(60),
                'category_id'  => 2,
                'user_id'  => 2,
-               'slug'  => $this->faker->slug,
         ];
     }
 }
