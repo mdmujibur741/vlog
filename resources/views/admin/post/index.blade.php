@@ -67,7 +67,9 @@
                       </table>
                     </div>
                     <!-- /.card-body -->
-                    {!! $post->links() !!}
+                 <div class="d-flex justify-content-center">
+                  {{ $post->links() }}
+                 </div>
                   </div>
                   
             </div>

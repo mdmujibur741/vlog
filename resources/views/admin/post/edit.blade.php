@@ -30,8 +30,7 @@
                                 <select name="category" id="category" class="form-control">
                                     <option value="" selected class="d-none">Choose Category</option>
                                     @foreach ($category as $item)
-                                        <option value="{{ $item->id }}"
-                                            @if ($item->id == $post->category_id) selected @endif>{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" @selected($item->id == $post->category_id)>{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -43,7 +42,7 @@
                                     <div class="custom-control custom-checkbox mr-3">
                                         <input class="custom-control-input" type="checkbox" name="tags[]"
                                             id="chek{{ $tag->id }}" value="{{ $tag->id }}"
-                                            @foreach ($post->tags as $t) @if ($tag->id == $t->id) checked @endif
+                                            @foreach ($post->tags as $t) @checked($tag->id == $t->id)
                                             @endforeach
                                         >
                                         <label for="chek{{ $tag->id }}"
@@ -90,13 +89,12 @@
 
     </div>
 @endsection
-
 @section('style')
-      <link rel="stylesheet" href="{{asset('admin')}}/plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('script')
-    <script src="{{asset('admin')}}/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.js" integrity="sha512-ZESy0bnJYbtgTNGlAD+C2hIZCt4jKGF41T5jZnIXy4oP8CQqcrBGWyxNP16z70z/5Xy6TS/nUZ026WmvOcjNIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $(function () {
       // Summernote
